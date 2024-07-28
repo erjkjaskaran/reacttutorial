@@ -9,7 +9,7 @@ function App() {
       <div className="container">
         <TextForm
           text="Enter your Text here"
-          summaryheading="Your Text Summary"
+          summaryheading="Your Text Summary:"
         />
       </div>
     </>
