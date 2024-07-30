@@ -7,18 +7,18 @@ export default function About(props) {
     color: "black",
   });
 
-  const enabledarkmode = () => {
-    setMystyle({
-      backgroundColor: "black",
-      color: "white",
-    });
-  };
-
-  const enablelightmode = () => {
-    setMystyle({
-      backgroundColor: "white",
-      color: "black",
-    });
+  const togglestyle = () => {
+    if (mystyle.color === "white") {
+      setMystyle({
+        color: "black",
+        backgroundColor: "white",
+      });
+    } else {
+      setMystyle({
+        color: "white",
+        backgroundColor: "black",
+      });
+    }
   };
 
   return (
@@ -119,12 +119,19 @@ export default function About(props) {
           </div>
         </div>
       </div>
-      <button className="btn btn-primary mx-2" onClick={enabledarkmode}>
-        Enable Dark Mode
-      </button>
-      <button className="btn btn-primary mx-2" onClick={enablelightmode}>
-        Enable Light Mode
-      </button>
+      <div className="form-check form-switch mx-2">
+        <label className="form-check-label" for="flexSwitchCheckChecked">
+          Dark Mode
+        </label>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckChecked"
+          unchecked
+          onChange={togglestyle}
+        />
+      </div>
     </div>
   );
 }
