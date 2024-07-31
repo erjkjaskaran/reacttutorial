@@ -120,7 +120,7 @@ export default function About(props) {
         </div>
       </div>
       <div className="form-check form-switch mx-2">
-        <label className="form-check-label" for="flexSwitchCheckChecked">
+        <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
           Dark Mode
         </label>
         <input
@@ -128,7 +128,7 @@ export default function About(props) {
           type="checkbox"
           role="switch"
           id="flexSwitchCheckChecked"
-          unchecked
+          unchecked="true"
           onChange={togglestyle}
         />
       </div>
