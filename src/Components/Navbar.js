@@ -5,7 +5,7 @@ export default function Navbar(props) {
   return (
     <nav
       className="navbar navbar-expand-lg bg-body-tertiary"
-      data-bs-theme="dark"
+      data-bs-theme={`${props.mode}`}
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
@@ -35,6 +35,26 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
+          <div
+            className={`form-check form-switch mx-2 text-${
+              props.mode === "light" ? "dark" : "light"
+            }`}
+          >
+            <input
+              className="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckChecked"
+              unchecked="true"
+              onChange={props.toggleMode}
+            />
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckChecked"
+            >
+              Dark Mode
+            </label>
+          </div>
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"
